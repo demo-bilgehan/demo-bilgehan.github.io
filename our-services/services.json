@@ -1,0 +1,53 @@
+{
+  "services": [
+    {
+      "id": "therapy-sessions",
+      "title": "Therapy Sessions",
+      "description": "Individual and group therapy options",
+      "icon": "psychology",
+      "link": "contact.html",
+      "order": 1
+    },
+    {
+      "id": "assessments",
+      "title": "Assessments",
+      "description": "Comprehensive psychological evaluations",
+      "icon": "assessment",
+      "link": "contact.html",
+      "order": 2
+    },
+    {
+      "id": "resources",
+      "title": "Resources",
+      "description": "Articles and mental health guides",
+      "icon": "book_4",
+      "link": "blog.html",
+      "order": 3
+    },
+    {
+      "id": "support",
+      "title": "Support",
+      "description": "Get in touch with our team",
+      "icon": "support_agent",
+      "link": "contact.html",
+      "order": 4
+    },
+    {
+      "id": "bilgehan",
+      "title": "Bilgehan",
+      "description": "Get in touch with our team",
+      "icon": "support_agent",
+      "link": "contact.html",
+      "order": 5
+    },
+    {
+      "id": "cengiz",
+      "title": "Cengiz",
+      "description": "Get in touch with our team",
+      "icon": "support_agent",
+      "link": "contact.html",
+      "order": 6
+    }
+  ]
+}
+

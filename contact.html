@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html class="light dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact Us - Clinical Psychology</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    "primary": "#135bec",
+                    "background-light": "#f6f6f8",
+                    "background-dark": "#101622",
+                },
+                fontFamily: {
+                    "display": ["Lexend", "sans-serif"]
+                },
+                borderRadius: {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+                },
+            },
+        },
+    }
+</script>
+<style>
+    .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .filled-icon {
+        font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    body {
+        min-height: max(884px, 100dvh);
+    }
+</style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#0d121b] dark:text-white">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-10 flex items-center bg-white/80 dark:bg-background-dark/80 backdrop-blur-md p-4 pb-2 justify-between border-b border-[#e7ebf3] dark:border-gray-800">
+    <div class="text-[#0d121b] dark:text-white flex size-10 items-center justify-center">
+        <a href="index.html" class="flex items-center justify-center rounded-lg h-10 w-10 bg-transparent text-[#0d121b] dark:text-white">
+            <span class="material-symbols-outlined text-2xl">arrow_back_ios</span>
+        </a>
+    </div>
+    <h2 class="text-[#0d121b] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Contact</h2>
+    <div class="flex size-10 items-center justify-end">
+        <button onclick="toggleDarkMode()" class="flex items-center justify-center rounded-lg h-10 w-10 bg-transparent text-[#0d121b] dark:text-white">
+            <span class="material-symbols-outlined text-2xl" id="darkModeIcon">dark_mode</span>
+        </button>
+    </div>
+</header>
+
+<main class="flex-1 pb-24 px-4 pt-6">
+<!-- Contact Form -->
+<section class="max-w-2xl mx-auto">
+    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm p-6 mb-6">
+        <h1 class="text-2xl font-bold mb-2 text-[#0d121b] dark:text-white">Get in Touch</h1>
+        <p class="text-gray-600 dark:text-gray-400 text-sm mb-6">We're here to help. Reach out for appointments, questions, or support.</p>
+        
+        <form id="contactForm" class="flex flex-col gap-4">
+            <div>
+                <label class="block text-sm font-medium mb-2 text-[#0d121b] dark:text-gray-200">Name</label>
+                <input type="text" name="name" required class="w-full rounded-xl bg-background-light dark:bg-gray-700 border border-[#e7ebf3] dark:border-gray-600 px-4 py-3 text-sm focus:ring-2 focus:ring-primary outline-none" placeholder="Your name"/>
+            </div>
+            
+            <div>
+                <label class="block text-sm font-medium mb-2 text-[#0d121b] dark:text-gray-200">Email</label>
+                <input type="email" name="email" required class="w-full rounded-xl bg-background-light dark:bg-gray-700 border border-[#e7ebf3] dark:border-gray-600 px-4 py-3 text-sm focus:ring-2 focus:ring-primary outline-none" placeholder="your.email@example.com"/>
+            </div>
+            
+            <div>
+                <label class="block text-sm font-medium mb-2 text-[#0d121b] dark:text-gray-200">Subject</label>
+                <select name="subject" required class="w-full rounded-xl bg-background-light dark:bg-gray-700 border border-[#e7ebf3] dark:border-gray-600 px-4 py-3 text-sm focus:ring-2 focus:ring-primary outline-none">
+                    <option value="">Select a subject</option>
+                    <option value="appointment">Schedule an Appointment</option>
+                    <option value="question">General Question</option>
+                    <option value="support">Support Request</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            
+            <div>
+                <label class="block text-sm font-medium mb-2 text-[#0d121b] dark:text-gray-200">Message</label>
+                <textarea name="message" required rows="6" class="w-full rounded-xl bg-background-light dark:bg-gray-700 border border-[#e7ebf3] dark:border-gray-600 px-4 py-3 text-sm focus:ring-2 focus:ring-primary outline-none resize-none" placeholder="Tell us how we can help..."></textarea>
+            </div>
+            
+            <button type="submit" class="w-full cursor-pointer overflow-hidden rounded-xl h-12 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/20 mt-2">
+                Send Message
+            </button>
+        </form>
+    </div>
+
+    <!-- Contact Information -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-5">
+            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3">
+                <span class="material-symbols-outlined text-primary text-2xl">mail</span>
+            </div>
+            <h3 class="text-base font-bold mb-1 text-[#0d121b] dark:text-white">Email</h3>
+            <p class="text-gray-600 dark:text-gray-400 text-sm">info@clinicalpsychology.com</p>
+        </div>
+        
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-5">
+            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3">
+                <span class="material-symbols-outlined text-primary text-2xl">phone</span>
+            </div>
+            <h3 class="text-base font-bold mb-1 text-[#0d121b] dark:text-white">Phone</h3>
+            <p class="text-gray-600 dark:text-gray-400 text-sm">+1 (555) 123-4567</p>
+        </div>
+        
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-5">
+            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3">
+                <span class="material-symbols-outlined text-primary text-2xl">schedule</span>
+            </div>
+            <h3 class="text-base font-bold mb-1 text-[#0d121b] dark:text-white">Office Hours</h3>
+            <p class="text-gray-600 dark:text-gray-400 text-sm">Mon-Fri: 9AM-6PM</p>
+        </div>
+        
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-5">
+            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3">
+                <span class="material-symbols-outlined text-primary text-2xl">location_on</span>
+            </div>
+            <h3 class="text-base font-bold mb-1 text-[#0d121b] dark:text-white">Location</h3>
+            <p class="text-gray-600 dark:text-gray-400 text-sm">123 Wellness St, City, State</p>
+        </div>
+    </div>
+
+    <!-- Emergency Notice -->
+    <div class="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl p-4 mb-6">
+        <div class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-red-600 dark:text-red-400">warning</span>
+            <div>
+                <h3 class="text-red-900 dark:text-red-200 font-bold text-sm mb-1">Emergency Support</h3>
+                <p class="text-red-700 dark:text-red-300 text-xs">If you're experiencing a mental health emergency, please contact your local emergency services (911) or a crisis hotline immediately.</p>
+            </div>
+        </div>
+    </div>
+</section>
+</main>
+
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 right-0 z-20 bg-white/90 dark:bg-background-dark/90 backdrop-blur-md border-t border-[#e7ebf3] dark:border-gray-800 px-4 pb-6 pt-2">
+    <div class="flex justify-between items-center max-w-md mx-auto">
+        <a class="flex flex-col items-center gap-1 text-gray-400" href="index.html">
+            <span class="material-symbols-outlined text-2xl">home</span>
+            <p class="text-[10px] font-medium">Home</p>
+        </a>
+        <a class="flex flex-col items-center gap-1 text-gray-400" href="blog.html">
+            <span class="material-symbols-outlined text-2xl">book_4</span>
+            <p class="text-[10px] font-medium">Resources</p>
+        </a>
+        <a class="flex flex-col items-center gap-1 text-primary" href="contact.html">
+            <span class="material-symbols-outlined filled-icon text-2xl">mail</span>
+            <p class="text-[10px] font-medium">Contact</p>
+        </a>
+        <a class="flex flex-col items-center gap-1 text-gray-400" href="contact.html">
+            <span class="material-symbols-outlined text-2xl">medical_services</span>
+            <p class="text-[10px] font-medium">Services</p>
+        </a>
+    </div>
+</nav>
+</div>
+
+<script src="js/utils.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        initDarkMode();
+        
+        const form = document.getElementById('contactForm');
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData);
+            
+            // In a real application, you would send this to a server
+            // For now, we'll just show a success message
+            alert('Thank you for your message! We\'ll get back to you soon.');
+            form.reset();
+        });
+    });
+</script>
+</body>
+</html>
+

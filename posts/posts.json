@@ -1,0 +1,33 @@
+{
+  "posts": [
+    {
+      "filename": "understanding-anxiety.md",
+      "title": "Understanding Anxiety: A Clinical Perspective",
+      "category": "Clinical",
+      "date": "2024-01-15",
+      "readTime": "8",
+      "excerpt": "Anxiety is one of the most common mental health conditions. Learn about its causes, symptoms, and evidence-based treatment approaches.",
+      "image": "images/image1.png",
+      "featured": true
+    },
+    {
+      "filename": "mindfulness-basics.md",
+      "title": "Mindfulness Basics: Starting Your Practice",
+      "category": "Wellness",
+      "date": "2024-01-10",
+      "readTime": "6",
+      "excerpt": "Discover the fundamentals of mindfulness meditation and how it can improve your mental well-being.",
+      "image": "images/image1.png"
+    },
+    {
+      "filename": "stress-management.md",
+      "title": "Effective Stress Management Techniques",
+      "category": "Anxiety",
+      "date": "2024-01-05",
+      "readTime": "10",
+      "excerpt": "Learn evidence-based strategies to manage stress and improve your quality of life.",
+      "image": "images/image1.png"
+    }
+  ]
+}
+

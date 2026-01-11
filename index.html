@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html class="light dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Clinical Psychology - Mental Health & Wellness</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    "primary": "#135bec",
+                    "background-light": "#f6f6f8",
+                    "background-dark": "#101622",
+                },
+                fontFamily: {
+                    "display": ["Lexend", "sans-serif"]
+                },
+                borderRadius: {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+                },
+            },
+        },
+    }
+</script>
+<style>
+    .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .filled-icon {
+        font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    body {
+        min-height: max(884px, 100dvh);
+    }
+    .line-clamp-1 {
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    .line-clamp-2 {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+</style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#0d121b] dark:text-white">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-10 flex items-center bg-white/80 dark:bg-background-dark/80 backdrop-blur-md p-4 pb-2 justify-between border-b border-[#e7ebf3] dark:border-gray-800">
+    <div class="text-[#0d121b] dark:text-white flex size-10 items-center justify-center">
+        <button onclick="toggleDarkMode()" class="flex items-center justify-center rounded-lg h-10 w-10 bg-transparent text-[#0d121b] dark:text-white">
+            <span class="material-symbols-outlined text-2xl" id="darkModeIcon">dark_mode</span>
+        </button>
+    </div>
+    <h2 class="text-[#0d121b] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Clinical Psychology</h2>
+    <div class="flex size-10 items-center justify-end">
+        <a href="contact.html" class="flex items-center justify-center rounded-lg h-10 w-10 bg-transparent text-[#0d121b] dark:text-white">
+            <span class="material-symbols-outlined text-2xl">mail</span>
+        </a>
+    </div>
+</header>
+
+<main class="flex-1 pb-24">
+<!-- Hero Section -->
+<section class="px-4 pt-6 pb-4">
+    <div class="relative w-full max-h-[400px] h-[50vh] min-h-[280px] rounded-xl overflow-hidden bg-center bg-cover flex flex-col justify-end p-5 md:p-8" style='background-image: linear-gradient(0deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0) 100%), url("images/hero-image.jpg");'>
+        <h1 class="text-white text-2xl md:text-3xl font-bold leading-tight mb-2">Your Journey to Mental Wellness</h1>
+        <p class="text-white/90 text-sm md:text-base mb-4 max-w-2xl">Evidence-based clinical psychology services and resources for your mental health journey.</p>
+        <a href="blog.html" class="inline-block w-fit rounded-xl bg-primary text-white text-sm font-bold px-6 py-3 shadow-lg shadow-primary/20 hover:bg-primary/90 transition-colors">
+            Explore Resources
+        </a>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="px-4 mb-6">
+    <h2 class="text-[#0d121b] dark:text-white text-xl font-bold mb-4">Our Services</h2>
+    <div id="servicesContainer" class="grid grid-cols-2 gap-4">
+        <!-- Services will be loaded here -->
+        <div class="col-span-2 text-center py-4">
+            <p class="text-gray-500 dark:text-gray-400 text-sm">Loading services...</p>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Blog Posts -->
+<section class="px-4 mb-6">
+    <div class="flex items-center justify-between mb-5">
+        <div>
+            <h2 class="text-[#0d121b] dark:text-white text-2xl font-bold mb-1">Latest Articles</h2>
+            <p class="text-gray-600 dark:text-gray-400 text-sm">Insights and resources for your mental health journey</p>
+        </div>
+        <a href="blog.html" class="text-primary text-sm font-semibold hover:underline whitespace-nowrap ml-4">View All →</a>
+    </div>
+    <div id="featuredPosts" class="space-y-4">
+        <!-- Posts will be loaded here -->
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="mt-8 px-4">
+    <div class="bg-primary/5 dark:bg-primary/10 border border-primary/10 rounded-2xl p-6">
+        <div class="flex flex-col gap-4 text-center">
+            <div class="mx-auto w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-2">
+                <span class="material-symbols-outlined text-primary text-2xl">mail</span>
+            </div>
+            <div class="flex flex-col gap-1">
+                <h2 class="text-[#0d121b] dark:text-white text-xl font-bold leading-tight">Stay Mindful</h2>
+                <p class="text-gray-600 dark:text-gray-400 text-sm">Weekly wellness insights delivered to your inbox.</p>
+            </div>
+            <div class="flex flex-col gap-3 mt-2">
+                <input id="newsletterEmail" class="form-input flex w-full rounded-xl text-[#0d121b] border-none bg-white dark:bg-gray-800 focus:ring-2 focus:ring-primary h-12 placeholder:text-gray-400 px-4 text-sm font-normal" placeholder="Your email address" type="email"/>
+                <button onclick="subscribeNewsletter()" class="w-full cursor-pointer overflow-hidden rounded-xl h-12 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/20">
+                    <span>Subscribe</span>
+                </button>
+            </div>
+            <p class="text-[10px] text-gray-400 uppercase tracking-tighter">No spam. Only science-backed wellness.</p>
+        </div>
+    </div>
+</section>
+</main>
+
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 right-0 z-20 bg-white/90 dark:bg-background-dark/90 backdrop-blur-md border-t border-[#e7ebf3] dark:border-gray-800 px-4 pb-6 pt-2">
+    <div class="flex justify-between items-center max-w-md mx-auto">
+        <a class="flex flex-col items-center gap-1 text-primary" href="index.html">
+            <span class="material-symbols-outlined filled-icon text-2xl">home</span>
+            <p class="text-[10px] font-medium">Home</p>
+        </a>
+        <a class="flex flex-col items-center gap-1 text-gray-400" href="blog.html">
+            <span class="material-symbols-outlined text-2xl">book_4</span>
+            <p class="text-[10px] font-medium">Resources</p>
+        </a>
+        <a class="flex flex-col items-center gap-1 text-gray-400" href="contact.html">
+            <span class="material-symbols-outlined text-2xl">mail</span>
+            <p class="text-[10px] font-medium">Contact</p>
+        </a>
+        <a class="flex flex-col items-center gap-1 text-gray-400" href="contact.html">
+            <span class="material-symbols-outlined text-2xl">medical_services</span>
+            <p class="text-[10px] font-medium">Services</p>
+        </a>
+    </div>
+</nav>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="js/utils.js"></script>
+<script>
+    // Load featured posts and services on homepage
+    document.addEventListener('DOMContentLoaded', function() {
+        loadFeaturedPosts();
+        loadServices();
+        initDarkMode();
+    });
+
+    function subscribeNewsletter() {
+        const email = document.getElementById('newsletterEmail').value;
+        if (email) {
+            alert('Thank you for subscribing! We\'ll send you weekly wellness insights.');
+            document.getElementById('newsletterEmail').value = '';
+        }
+    }
+
+    async function loadServices() {
+        try {
+            const services = await getServicesList();
+            const container = document.getElementById('servicesContainer');
+            
+            if (services.length === 0) {
+                container.innerHTML = '<div class="col-span-2 text-center py-4"><p class="text-gray-500 dark:text-gray-400 text-sm">No services available at this time.</p></div>';
+                return;
+            }
+
+            // Determine grid columns based on number of services
+            let gridCols = 'grid-cols-2';
+            if (services.length === 1) {
+                gridCols = 'grid-cols-1';
+            } else if (services.length === 3 || services.length === 5) {
+                gridCols = 'grid-cols-2';
+            } else if (services.length >= 4) {
+                gridCols = 'grid-cols-2 md:grid-cols-3';
+            }
+
+            container.className = `grid ${gridCols} gap-4`;
+            container.innerHTML = services.map(service => `
+                <a href="${service.link || 'contact.html'}" class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm flex flex-col p-4 hover:shadow-md transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3 group-hover:bg-primary/20 transition-colors">
+                        <span class="material-symbols-outlined text-primary text-2xl">${service.icon || 'help'}</span>
+                    </div>
+                    <h3 class="text-[#0d121b] dark:text-white text-base font-bold mb-1 group-hover:text-primary transition-colors">${service.title}</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-xs">${service.description || ''}</p>
+                </a>
+            `).join('');
+        } catch (error) {
+            console.error('Error loading services:', error);
+            const container = document.getElementById('servicesContainer');
+            container.innerHTML = '<div class="col-span-2 text-center py-4"><p class="text-red-500 text-sm">Error loading services. Please try again later.</p></div>';
+        }
+    }
+
+    async function loadFeaturedPosts() {
+        try {
+            const posts = await getPostsList();
+            const featuredPosts = posts.slice(0, 4);
+            const container = document.getElementById('featuredPosts');
+            
+            if (featuredPosts.length === 0) {
+                container.innerHTML = '<div class="bg-white dark:bg-gray-800 rounded-xl p-8 text-center"><p class="text-gray-500 dark:text-gray-400 text-sm">No posts yet. Check back soon!</p></div>';
+                return;
+            }
+
+            container.innerHTML = featuredPosts.map((post, index) => {
+                if (index === 0) {
+                    // Featured post - larger horizontal card
+                    return `
+                        <a href="post.html?file=${post.filename}" class="block bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 group">
+                            <div class="flex flex-col md:flex-row">
+                                <div class="w-full md:w-2/5 h-48 md:h-auto bg-center bg-cover bg-gradient-to-br from-primary/20 to-primary/40" style='background-image: url("${post.image || ''}");'></div>
+                                <div class="flex-1 p-5 md:p-6 flex flex-col justify-between">
+                                    <div>
+                                        <div class="flex items-center gap-2 mb-2">
+                                            <span class="inline-block bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded">${post.category || 'Article'}</span>
+                                            ${post.featured ? '<span class="inline-block bg-primary text-white text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded">Featured</span>' : ''}
+                                        </div>
+                                        <h3 class="text-xl md:text-2xl font-bold leading-tight mb-2 text-[#0d121b] dark:text-white group-hover:text-primary transition-colors">${post.title}</h3>
+                                        ${post.excerpt ? `<p class="text-gray-600 dark:text-gray-400 text-sm mb-3 line-clamp-2">${post.excerpt}</p>` : ''}
+                                    </div>
+                                    <div class="flex items-center justify-between mt-3">
+                                        <div class="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-xs">
+                                            <span class="material-symbols-outlined text-sm">schedule</span>
+                                            <span>${post.readTime || '5'} min read</span>
+                                        </div>
+                                        <span class="text-primary text-sm font-medium group-hover:translate-x-1 transition-transform inline-flex items-center">
+                                            Read more <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    `;
+                } else {
+                    // Regular posts - compact horizontal cards
+                    return `
+                        <a href="post.html?file=${post.filename}" class="block bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 group">
+                            <div class="flex">
+                                <div class="w-24 h-24 md:w-28 md:h-28 flex-shrink-0 bg-center bg-cover bg-gradient-to-br from-primary/20 to-primary/40 rounded-l-xl" style='background-image: url("${post.image || ''}");'></div>
+                                <div class="flex-1 p-4 flex flex-col justify-center">
+                                    <div class="flex items-center gap-2 mb-1.5">
+                                        <span class="text-primary text-xs font-bold uppercase tracking-wider">${post.category || 'Article'}</span>
+                                        <span class="text-gray-400 text-xs">•</span>
+                                        <span class="text-gray-500 dark:text-gray-400 text-xs">${post.readTime || '5'} min</span>
+                                    </div>
+                                    <h4 class="text-base font-bold leading-tight mb-1 text-[#0d121b] dark:text-white group-hover:text-primary transition-colors line-clamp-2">${post.title}</h4>
+                                    ${post.excerpt ? `<p class="text-gray-500 dark:text-gray-400 text-xs line-clamp-1">${post.excerpt.substring(0, 60)}...</p>` : ''}
+                                </div>
+                            </div>
+                        </a>
+                    `;
+                }
+            }).join('');
+        } catch (error) {
+            console.error('Error loading featured posts:', error);
+        }
+    }
+</script>
+</body>
+</html>
+
